@@ -8,14 +8,19 @@
 </head>
 <body>
     <?php
-    $a = 4;
-    $b = 10;
-    $c = ($b - 5) * $a;
-    echo"Result 1 =" . $c . "<BR>";
-    echo'Result 2 =' . $c . '<BR>';
-    echo"Result 3 = $c <BR>";
-    echo'Result 4 = $c <BR>';
-    echo"Result 5 =" . ($c + $b) . "<BR>";
+    $ages = array('Bob'=>20, 'Peter'=>35);
+    
+    
+    echo"1 -" . $ages['Bob'] . "<BR>";
+    echo"2 -" . $ages['Peter'] . "<BR>";
+    
+
+    $ages['Lek']=18;
+    $ages['Ying']=42;
+    
+    echo"3 -" . ($ages['Lek']+$ages['Peter']) . "<BR>";
+    $ages['Peter']=$ages['Bob']-$ages['Lek'];
+    echo"4 -" . $ages['Peter'] . "<BR>";
     ?>
 </body>
-</html>
+</html> 
