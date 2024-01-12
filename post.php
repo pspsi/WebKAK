@@ -10,8 +10,18 @@
     <h1 style="text-align:center ;">Webboard KakKak</h1>
     <hr>
     
-    <div style="text-align:center;" >ต้องการดูกระทู้หมายเลข<?php $id=$_GET ['id']; echo $id ."<BR> <BR>";?>
+    <div style="text-align:center;" >ต้องการดูกระทู้หมายเลข<?php $id=$_GET ['id']; echo $id ."<BR>";?>
 </div>
+    <?php
+        if ($id=$_GET ['id'] / 2 == 0) {
+            echo"<center>เป็นกระทู้หมายเลขคู่ <br>";
+        }
+        else{
+            echo"<center>เป็นกระทู้หมายเลขคี่ <br>";
+        }
+
+    ?>
+    <br>
     <form >
     <table style="border: 2px solid black; width: 25%" align="center">
         <tr><td align="left" bgcolor="#6CD2FE">แสดงความคิดเห็น</td></tr>
