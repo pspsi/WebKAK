@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (isset($_SESSION['id'])) {
+    header("location:index.php");
+    die();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +17,7 @@
     <title>Login</title>
 </head>
 <body>
+    
     <h1 style="text-align:center ;">Webboard KakKak</h1>
     <hr>
     <form action="verify.php" method="post">
@@ -17,7 +28,10 @@
         <tr><td colspan="2" align="center"><input type="submit"value="login"></td></tr>
     </table>
     <br>
-    <center>ถ้ายังไม่ได้เป็นสมาชิก <a href="register.html">กรุณาสมัครสมาชิก</a></center>
+    <center>ถ้ายังไม่ได้เป็นสมาชิก <a href="register.php">กรุณาสมัครสมาชิก</a></center>
+
 </form>
+
 </body>
+
 </html>
