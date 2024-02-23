@@ -47,42 +47,22 @@ session_start();
             <?php }?>
       </ul>
   </div>
-</nav>
-    <form action="post.php" method="post">
-    หมวดหมู่: <select name="category" >
-        <option value="all">--ทั้งหมด--</option>
-        <option value="general">เรื่องทั่วไป</option>
-        <option value="study">เรื่องเรียน</option>
-    </select>
-    <?php
-    if(!isset($_SESSION['id'])){
-        echo "<a href=login.php style=float: right;> เข้าสู่ระบบ </a>";
-    }else{
-        echo " <div style='float: right;'>
-        ผู้ใช้งานระบบ : $_SESSION[name]&nbsp;&nbsp;
-        <a href=logout.php>ออกจากรบบ</a>
-        
-        </div>";
-        echo" <br><a href=newpost.php>สร้างกระทู้ใหม่</a>";
-    }
-    ?>
-    
-    </form action="post.php" method="get"> 
-    <ul>
-        <?php
-        for ($i=1; $i <=10 ; $i++) { 
-            echo"<li> <a href=post.php?id=$i>กระทู้ที่ $i </a>";
+  
+  <table class="table table-striped mt-4">
+  <?php
+     for ($i=1; $i <=10 ; $i++) {
+            echo"<tr> <td class='d-flex justify-content-between'><a href=post.php?id=$i style=text-decoration:none>กระทู้ที่ $i </a>";
             if ((isset($_SESSION['id'])) && ($_SESSION['role']=='a')) {
-                echo"&nbsp;&nbsp;<a href=delete.php?id=$i</a>ลบ</a>";
+                echo"&nbsp;&nbsp;<a href=delete.php?id=$i class='btn btn-danger bth-sm'><i class='bi bi-trash3'></i></a>";
             }
             else {
                 echo"";
             }
-        
-            echo"</li>";
-        } 
-        ?>
-    </ul>
+            ?>
+  </table>
+  
+ 
+</nav>
     </div>
 </body>
 </html>
